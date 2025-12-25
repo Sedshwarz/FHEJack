@@ -1,0 +1,2 @@
+export const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS || "0x40757E0280B5D9dc2e67F92D8755a0b74A832A00";
+export const ORACLE_API_URL = process.env.REACT_APP_ORACLE_API_URL || "http://localhost:3001";
