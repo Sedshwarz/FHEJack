@@ -4,11 +4,11 @@ FHEJack is an innovative on-chain card game that merges the excitement of classi
 
 </br>
 
-[![FHEJack](https://img.youtube.com/vi/ieFd5J-VU74/0.jpg)](https://www.youtube.com/watch?v=ieFd5J-VU74)
-
-</br>
-
 <p align="center">
+  <a href="https://youtu.be/7j2tiXlrMWI" target="_blank">
+    <img src="./frontend/src/assets/thumbnail.png" width="90%" title="video">
+  </a>
+  </br>
   <img src="./frontend/src/assets/logo.png" width="300" title="Logo">
 </p>
 
