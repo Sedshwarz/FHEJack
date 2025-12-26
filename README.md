@@ -32,7 +32,8 @@ Oracle & Signature Settlement: The encrypted seed is shared securely (via Re-enc
 Secure On-Chain Payout: When the game ends, the server generates a "Winning Ticket" (a data packet containing the result and a cryptographic signature). The user submits this ticket to the blockchain to claim their winnings instantly. The contract verifies the signature before releasing funds.
 
 </br>
-
+</br>
+</br>
 
 ### Technical Workflow and Data Flow
 
