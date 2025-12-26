@@ -33,11 +33,37 @@ Secure On-Chain Payout: When the game ends, the server generates a "Winning Tick
 
 </br>
 
+
+### Technical Workflow and Data Flow
+
+Initialization (Handshake)
+--------------------------
+The user connects to the site via MetaMask. Their balance is fetched from the blockchain (if it’s their first login, it appears as 0). There is a “Faucet” button in the top-right corner to request funds.
+On the frontend (using fhevmjs), a one-time signature is requested from the user to generate a Re-encryption Key. This key ensures that the user can only view their own encrypted cards.
+
+Encrypted Distribution (On-Chain)
+---------------------------------
+When the user sets a bet and clicks the “Deal” button, the smart contract is triggered. The contract generates the cards as euint8 (encrypted data type). At this stage, all cards are fully encrypted on the blockchain; miners or network observers cannot see them.
+
+Blind Computation (FHE Operations)
+----------------------------------
+When the user draws a card (Hit), the addition operation is performed on encrypted values (Encrypted Card + Encrypted Total). The resulting new total remains encrypted.
+
+Oracle Verification (Backend)
+-----------------------------
+When the dealer’s cards are revealed or the game ends, a Node.js Oracle running on Render is invoked. When necessary, it validates the game flow and updates the on-chain state.
+
+Result (Reveal)
+---------------
+At the end of the game, the smart contract performs an encrypted comparison (UserTotal > DealerTotal). If the user wins, the balance transfer is executed.
+
+
+
 ### Tech Stack
 
 This project represents a fusion of modern web and next-gen privacy blockchain technologies:
 
-<i>Frontend:</i> React, Vite, Framer Motion (for smooth animations).
+<i>Frontend:</i> React and UI/UX libraries.
 
 <i>Blockchain:</i> Solidity, Hardhat, FHEVM (Fully Homomorphic Encryption Virtual Machine).
 
