@@ -16,8 +16,13 @@ app.use(cors({
   credentials: true
 }));
 
-app.use(cors());
 app.use(express.json());
+
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
+
 
 // Oracle Wallet
 const signer = new ethers.Wallet(process.env.SERVER_PRIVATE_KEY);
